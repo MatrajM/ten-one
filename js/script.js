@@ -1,9 +1,10 @@
 var elem = document.querySelector('.main-carousel');
 
 var flkty = new Flickity( elem, {
-    groupCells: true
+    groupCells: true,
+    hash: true,
   });
-  
+ 
   var buttonGroup = document.querySelector('.button-group');
   var buttons = buttonGroup.querySelectorAll('.button');
   buttons = fizzyUIUtils.makeArray( buttons );
