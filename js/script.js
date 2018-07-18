@@ -3,6 +3,7 @@ var elem = document.querySelector('.main-carousel');
 var flkty = new Flickity( elem, {
     groupCells: true,
     hash: true,
+    pageDots: none,
   });
  
   var buttonGroup = document.querySelector('.button-group');
