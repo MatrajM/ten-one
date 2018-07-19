@@ -1,5 +1,5 @@
 
-
+(function(){ 
 var slideContent = document.getElementById('slide-content').innerHTML;
 
 Mustache.parse(slideContent);
@@ -7,9 +7,14 @@ Mustache.parse(slideContent);
 var slideItems='';
 
 for(var i = 0; i < slideData.length; i++){
+  console.log(slideData);
   slideItems += Mustache.render(slideContent, slideData[i]);
-}
-show-slides.insertAdjacentHTML(slideItems);
+};
+
+var fullSlide = Mustache.render(slideItems);
+
+show-slides.insertAdjacentHTML('beforeend', fullSlide);
+})(); 
 
 var elem = document.querySelector('.main-carousel');
 

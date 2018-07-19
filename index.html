@@ -50,40 +50,45 @@
             </div>
         -->
         </div>
-        <script id="slide-content" type="x-tmpl-mustache">
-            {{image}}
-            <h3>{{title}}</h3>
-            {{description}}
-        </script>
+
+       
+
         <script>
             var slideData = [
                 {
-                    image: <img src="https://upload.wikimedia.org/wikipedia/commons/d/d1/Mount_Everest_as_seen_from_Drukair2_PLW_edit.jpg"/>,
+                    image: 'https://upload.wikimedia.org/wikipedia/commons/d/d1/Mount_Everest_as_seen_from_Drukair2_PLW_edit.jpg',
                     title: 'Mount Everest',
-                    description:<p>Mount Everest</p>
+                    description: 'Mount Everest'
                 },
                 {
-                    image: <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/K2%2C_Mount_Godwin_Austen%2C_Chogori%2C_Savage_Mountain.jpg/1200px-K2%2C_Mount_Godwin_Austen%2C_Chogori%2C_Savage_Mountain.jpg"/>,
-                    title:'K2',
-                    description:<p>K2</p>
+                    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/K2%2C_Mount_Godwin_Austen%2C_Chogori%2C_Savage_Mountain.jpg/1200px-K2%2C_Mount_Godwin_Austen%2C_Chogori%2C_Savage_Mountain.jpg',
+                    title: 'K2',
+                    description: 'K2'
                 },
                 {
-                    image:<img src="https://upload.wikimedia.org/wikipedia/commons/3/33/Kangchenjunga.JPG"/>,
+                    image: 'https://upload.wikimedia.org/wikipedia/commons/3/33/Kangchenjunga.JPG',
                     title:'Kangchenjunga',
-                    description:<p>Kangchenjunga</p>
+                    description: 'Kangchenjunga'
                 },
                 {
-                    image:<img src="http://www.mountainsoftravelphotos.com/Lhotse/Best/slides/Kongma%20La%2023%20Lhotse%20South%20Face,%20Lhotse,%20Lhotse%20Middle,%20Lhotse%20Shar%20Close%20Up%20From%20Near%20Dingboche.jpg"/>,
+                    image: 'http://www.mountainsoftravelphotos.com/Lhotse/Best/slides/Kongma%20La%2023%20Lhotse%20South%20Face,%20Lhotse,%20Lhotse%20Middle,%20Lhotse%20Shar%20Close%20Up%20From%20Near%20Dingboche.jpg',
                     title:'Lhotse',
-                    description:<p>Lhotse</p>
+                    description: 'Lhotse'
                 },
                 {
-                    image:<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Makalu_2.jpeg/1200px-Makalu_2.jpeg"/>,
+                    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Makalu_2.jpeg/1200px-Makalu_2.jpeg',
                     title:'Makalu',
-                    description:<p>Makalu</p>
+                    description: 'Makalu'
                 },
             ];
         </script>
+
+        <script id="slide-content" type="x-tmpl-mustache">
+            <img src="{{image}}">
+            <h3>{{title}}</h3>
+            <p>{{description}}</p>
+        </script>
+
         <div class="progress-bar"></div>
         <script src="vendor/flickity.pkgd.min.js"></script>
         <script src="vendor/hash.js"></script>
