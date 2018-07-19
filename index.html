@@ -11,82 +11,55 @@
         <div class="button-group">
             <button class="button">RESET</button>
         </div>
-        <div class="main-carousel" data-flickity='{ "hash": true, "pageDots": false }'>
-
-            <div class="carousel-cell" id="carousel-cell1")>
-                <div class="container">
-                        <div id="show-slides"></div>
-                </div>
-            </div>
-            <!--
-            <div style="background-image: url(https://upload.wikimedia.org/wikipedia/commons/d/d1/Mount_Everest_as_seen_from_Drukair2_PLW_edit.jpg)" class="carousel-cell" id="carousel-cell1")>
-                <div class="container">
-                    <p>Mount Everest</p>
-                </div>
-            </div>
-
-            <div style="background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/K2%2C_Mount_Godwin_Austen%2C_Chogori%2C_Savage_Mountain.jpg/1200px-K2%2C_Mount_Godwin_Austen%2C_Chogori%2C_Savage_Mountain.jpg)" class="carousel-cell" id="carousel-cell2">
-                    <div class="container">
-                        <p>K2</p>
-                    </div>
-            </div>
-
-            <div style="background-image: url(https://upload.wikimedia.org/wikipedia/commons/3/33/Kangchenjunga.JPG)" class="carousel-cell" id="carousel-cell3">
-                    <div class="container">
-                        <p>Kangchenjunga</p>
-                    </div>
-            </div>
-
-            <div style="background-image: url(http://www.mountainsoftravelphotos.com/Lhotse/Best/slides/Kongma%20La%2023%20Lhotse%20South%20Face,%20Lhotse,%20Lhotse%20Middle,%20Lhotse%20Shar%20Close%20Up%20From%20Near%20Dingboche.jpg)" class="carousel-cell" id="carousel-cell4">
-                    <div class="container">
-                        <p>Lhotse</p>
-                    </div>
-            </div>
-
-            <div style="background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Makalu_2.jpeg/1200px-Makalu_2.jpeg)" class="carousel-cell" id="carousel-cell5">
-                    <div class="container">
-                        <p>Makalu</p>
-                    </div>
-            </div>
-        -->
+        <div id="slider" class="main-carousel" data-flickity='{ "hash": true, "pageDots": false }'>
         </div>
-
-       
-
+        <div class="container">
+            <div id="map"></div>
+        </div>
+        
         <script>
             var slideData = [
                 {
                     image: 'https://upload.wikimedia.org/wikipedia/commons/d/d1/Mount_Everest_as_seen_from_Drukair2_PLW_edit.jpg',
                     title: 'Mount Everest',
-                    description: 'Mount Everest'
+                    description: 'Mount Everest',
+                    coords: { lat:27.986065, lng:86.922623}
                 },
                 {
                     image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/8c/K2%2C_Mount_Godwin_Austen%2C_Chogori%2C_Savage_Mountain.jpg/1200px-K2%2C_Mount_Godwin_Austen%2C_Chogori%2C_Savage_Mountain.jpg',
                     title: 'K2',
-                    description: 'K2'
+                    description: 'K2',
+                    coords: { lat:35.880981, lng:76.508102}
                 },
                 {
                     image: 'https://upload.wikimedia.org/wikipedia/commons/3/33/Kangchenjunga.JPG',
                     title:'Kangchenjunga',
-                    description: 'Kangchenjunga'
+                    description: 'Kangchenjunga',
+                    coords: { lat:27.701497194, lng:88.142332764}
                 },
                 {
                     image: 'http://www.mountainsoftravelphotos.com/Lhotse/Best/slides/Kongma%20La%2023%20Lhotse%20South%20Face,%20Lhotse,%20Lhotse%20Middle,%20Lhotse%20Shar%20Close%20Up%20From%20Near%20Dingboche.jpg',
                     title:'Lhotse',
-                    description: 'Lhotse'
+                    description: 'Lhotse',
+                    coords: { lat:27.956996172, lng:86.9333296}
                 },
                 {
                     image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Makalu_2.jpeg/1200px-Makalu_2.jpeg',
                     title:'Makalu',
-                    description: 'Makalu'
+                    description: 'Makalu',
+                    coords: { lat:27.886829786, lng:87.086499654}
                 },
             ];
         </script>
 
-        <script id="slide-content" type="x-tmpl-mustache">
-            <img src="{{image}}">
-            <h3>{{title}}</h3>
-            <p>{{description}}</p>
+        <script id="template-list" type="x-tmpl-mustache">
+            {{{slides}}}
+        </script>
+
+        <script id="template-slide" type="x-tmpl-mustache">
+        <div class="carousel-cell" style="background-image: url({{image}})">
+            <h1>{{title}}</h1>
+        </div>
         </script>
 
         <div class="progress-bar"></div>
@@ -94,5 +67,6 @@
         <script src="vendor/hash.js"></script>
         <script src="vendor/mustache.js"></script>
         <script src="js/script.js"></script>
+        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCGUVMQ0K1KEKjp6-fNKO21z1cicpMcyaA&callback=initMap"></script>
     </body>
 </html>
