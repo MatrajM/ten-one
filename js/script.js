@@ -56,23 +56,19 @@ flkty.on( 'scroll', function( progress ) {
 			center: slideData[0].coords
     });
 
-    for ( var i = 0; i < slideData.length; i++ ){
+    for ( let i = 0; i < slideData.length; i++ ){
     
-      var marker = new google.maps.Marker({
-              
+      var marker = new google.maps.Marker({      
       position: slideData[i].coords,
       map: map    
       });
      
       marker.addListener('click', function(){
-        if( !matchesSelector (marker)){
-          return;
-        }
-        var slideIndex = slideData[i];
-        flkty.selectCell( slideIndex );
+      flkty.selectCell(i);
       });
-      flkty.on('change', function(slideData){
-        map.panTo(slideData[i]);
+      flkty.on('change', function(index){
+        map.panTo(slideData[index].coords);
+        map.setZoom(10);
       });
       }
     
