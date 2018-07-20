@@ -52,19 +52,15 @@ flkty.on( 'scroll', function( progress ) {
     
 
     var map = new google.maps.Map(document.getElementById('map'), {
-			zoom: 4,
-			center: position
+			zoom: 10,
+			center: slideData[0].coords
     });
 
     for ( var i = 0; i < slideData.length; i++ ){
-				
-      var location = slideData[ 'coords' ];
-                
-      var position = new google.maps.LatLng( location[ 0 ], location[ 1 ] );
-            
+    
       var marker = new google.maps.Marker({
               
-      position: position,
+      position: slideData[i].coords,
       map: map    
       });      
       }
