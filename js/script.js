@@ -1,19 +1,20 @@
 
 (function(){ 
-var slideContent = document.getElementById('slide-content').innerHTML;
+var templateList = document.getElementById('template-list').innerHTML;
+var templateItem = document.getElementById('template-slide').innerHTML;
 
-Mustache.parse(slideContent);
+Mustache.parse(templateItem);
 
 var slideItems='';
 
 for(var i = 0; i < slideData.length; i++){
   console.log(slideData);
-  slideItems += Mustache.render(slideContent, slideData[i]);
+  slideItems += Mustache.render(templateItem, slideData[i]);
 };
 
-var fullSlide = Mustache.render(slideItems);
+var fullSlide = Mustache.render(templateList, { slides: slideItems });
 
-show-slides.insertAdjacentHTML('beforeend', fullSlide);
+slider.insertAdjacentHTML('beforeend', fullSlide);
 })(); 
 
 var elem = document.querySelector('.main-carousel');
