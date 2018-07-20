@@ -62,7 +62,19 @@ flkty.on( 'scroll', function( progress ) {
               
       position: slideData[i].coords,
       map: map    
-      });      
+      });
+     
+      marker.addListener('click', function(){
+        if( !matchesSelector (marker)){
+          return;
+        }
+        var slideIndex = slideData[i];
+        flkty.selectCell( slideIndex );
+      });
+      flkty.on('change', function(slideData){
+        map.panTo(slideData[i]);
+      });
       }
+    
   }
 })(); 
